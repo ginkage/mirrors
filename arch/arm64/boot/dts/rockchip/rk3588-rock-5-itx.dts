@@ -590,16 +590,6 @@
 &display_subsystem {
 	clocks = <&hdptxphy_hdmi0>, <&hdptxphy_hdmi1>;
 	clock-names = "hdmi0_phy_pll", "hdmi1_phy_pll";
-	route {
-		route_hdmi1: route-hdmi1 {
-			status = "okay";
-			logo,uboot = "logo.bmp";
-			logo,kernel = "logo_kernel.bmp";
-			logo,mode = "center";
-			charge_logo,mode = "center";
-			connect = <&vp1_out_hdmi1>;
-		};
-	};
 };
 
 &hdmi1 {
@@ -877,11 +867,6 @@
 	status = "okay";
 };
 
-&route_dp0 {
-	status = "okay";
-	connect = <&vp1_out_dp0>;
-};
-
 &dp1 {
 	status = "okay";
 	pinctrl-names = "default";
@@ -891,11 +876,6 @@
 
 &dp1_in_vp2 {
 	status = "okay";
-};
-
-&route_dp1 {
-	status = "okay";
-	connect = <&vp2_out_dp1>;
 };
 
 &u2phy1 {
