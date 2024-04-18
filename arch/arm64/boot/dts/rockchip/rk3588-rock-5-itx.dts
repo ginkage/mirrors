@@ -588,7 +588,7 @@
 };
 
 &display_subsystem {
-	clocks = <&hdptxphy_hdmi_clk0>, <&hdptxphy_hdmi_clk1>;
+	clocks = <&hdptxphy_hdmi0>, <&hdptxphy_hdmi1>;
 	clock-names = "hdmi0_phy_pll", "hdmi1_phy_pll";
 	route {
 		route_hdmi1: route-hdmi1 {
@@ -600,14 +600,6 @@
 			connect = <&vp0_out_hdmi1>;
 		};
 	};
-};
-
-&hdptxphy_hdmi_clk0 {
-	status = "okay";
-};
-
-&hdptxphy_hdmi_clk1 {
-	status = "okay";
 };
 
 &hdmi1 {
