@@ -222,7 +222,7 @@
 		key-vol-up {
 			label = "volume up";
 			linux,code = <KEY_VOLUMEUP>;
-			gpios = <&gpio0 RK_PC2 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio4 RK_PA6 GPIO_ACTIVE_LOW>;
 		};
 
 		key-vol-down {
@@ -849,7 +849,7 @@
 	gpio-key {
 		volume_keys: volume-keys {
 			rockchip,pins =
-				<0 RK_PC2 RK_FUNC_GPIO &pcfg_pull_up>,
+				<4 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>,
 				<1 RK_PB1 RK_FUNC_GPIO &pcfg_pull_up>,
 				<1 RK_PC6 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
