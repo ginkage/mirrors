@@ -143,7 +143,7 @@
 			"RINPUT2", "Mic Jack";
 		pinctrl-0 = <&hp_det>;
 		pinctrl-names = "default";
-		hp-det-gpio = <&gpio1 RK_PB2 GPIO_ACTIVE_HIGH>;
+		simple-audio-card,hp-det-gpio = <&gpio1 RK_PB2 GPIO_ACTIVE_LOW>;
 		sac_cpu: simple-audio-card,cpu {
 			sound-dai = <&i2s1_8ch>;
 		};
@@ -219,15 +219,15 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&volume_keys>;
 
-		key-vol-up {
-			label = "volume up";
-			linux,code = <KEY_VOLUMEUP>;
-			gpios = <&gpio4 RK_PA6 GPIO_ACTIVE_LOW>;
-		};
-
 		key-vol-down {
 			label = "volume down";
 			linux,code = <KEY_VOLUMEDOWN>;
+			gpios = <&gpio4 RK_PA6 GPIO_ACTIVE_LOW>;
+		};
+
+		key-vol-up {
+			label = "volume up";
+			linux,code = <KEY_VOLUMEUP>;
 			gpios = <&gpio1 RK_PB1 GPIO_ACTIVE_LOW>;
 		};
 
@@ -995,5 +995,13 @@
 
 &vepu {
 	status = "okay";
+};
+
+&rknpu {
+	status = "disabled";
+};
+
+&rknpu_mmu {
+	status = "disabled";
 };
 
